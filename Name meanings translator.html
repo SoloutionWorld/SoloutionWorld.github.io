@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Meaning Checker</title>
+  <link rel="stylesheet" href="homebutton.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            max-width: 600px; /* Set a maximum width for larger screens */
+            margin: 20px auto; /* Center the container horizontally */
+        }
+
+        #form {
+            margin-top: 20px;
+        }
+
+        input[type='text'] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        #namesContainer {
+            text-align: left;
+        }
+
+        .nameCard {
+            background-color: #48a1e6;
+            color: #fff;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nameCard:hover {
+            background-color: #3a8ac4;
+        }
+
+        @media (max-width: 600px) {
+            input[type='text'] {
+                width: calc(100% - 24px);
+            }
+        }
+    </style>
+</head>
+ 
+<body>
+<button id="top-right-button" onclick="window.location.href = 'index.html'">Go to Home</button>
+
+
+    <div id="container">
+        <label for="nameInput">
+            Enter Name:
+            <input type="text" id="nameInput" placeholder="Type a name..." />
+        </label>
+    </div>
+
+    <div id="container">
+        <h3>Name Meaning Checker</h3>
+        <form id="form" autocomplete="off"></form>
+        <div id="namesContainer"></div>
+    </div>
+<script src="NameMeanings.js"></script>
+<script src="homebutton.js"></script>
+</body>
+</html>

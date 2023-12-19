@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="homebutton.css">
+</head>
+<button id="top-right-button" onclick="window.location.href = 'index.html'">Go to Home</button>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div> The free version is only for demo Upgrade it for better results. Do not use Ads direct link in free version.</div>
+  
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #me {
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            background-color: #25d366; 
+            color: #ffffff;
+            border-radius: 5px;
+        }
+    </style>
+<div id="outputMessage"></div>
+ <div id="offlineMessage"></div>
+<div id="pageContent">
+  <div id="resultMessage" style="color: red; font-size: medium;"></div>
+  
+<script>
+document.addEventListener('keydown', event => {
+  if (event.ctrlKey && event.keyCode === 83) { // Ctrl+S
+    event.preventDefault();
+    return false;
+  } else if (event.keyCode === 123) { // F12
+    event.preventDefault();
+    return false;
+  }
+});
+</script>
+
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.table-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        #startBtn {
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+          
+        }
+   #restbtnt {
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+     border-radius: 5px;}
+
+     #restbtnt1 {
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+     border-radius: 5px;}
+
+
+        #iframeContainer {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 600px) {
+            input {
+                width: 100%;
+            }
+        }
+    </style>
+  
+  
+      <label>Paste Your Link:<button onclick="pasteURL
+
+()">Paste</button></label>
+    <input id="linkInput" placeholder="https://example.com" type="text" />
+   
+    <form id="myForm">
+        <label>Time To Display Every Page<span style="font-size: x-small;"> (in Seconds)</span></label>
+        <input id="clickTimeInput" type="number" Placeholder="Enter Time in Seconds" />
+
+        <label>Times to Click on link / Maximum Tabs want 
+
+to Open <span style="font-size: x-small;">(in 
+
+Numbers)</span></label>
+        <span><span><span style="color: red;">Note: Free versions include only less than 10 
+
+Clicks at a time. </span><a href="https://bestsoloution-free-version.blogspot.com/p/upgrade-free-version.html"><b><span style="color: #2b00fe;">Upgrade</span></b></a><span style="color: red;"> to increase it more</span></span><span style="color: red;">.</span><br /></span>
+        <input id="maxTabsInput" maxlength="1" placeholder="Enter clicks /Tabs in Numbers" type="Text" />
+
+        <label>&nbsp;Time to close Link / tabs<span style="font-size: x-small;"> ( in seconds)</span>:</label>
+        <input id="closeTimeInput" type="number" Placeholder="Enter Time in Seconds" />
+    </form>
+
+    <button id="startBtn" onclick="showMessage()">Start</button>  
+  <button id="restbtnt" onclick="reloadPage()">Reset / stop</button>
+  <br>
+  <br>
+  <br>
+  <a href="https://bestsoloution-free-version.blogspot.com/p/upgrade-free-version.html"><button id="restbtnt1" >Upgrade </button> 
+  <a href="https://bestsoloution-free-version.blogspot.com/p/how-to-use.html"><button id="restbtnt1" >How to use</button></a>
+  <a href="https://bestsoloution-free-version.blogspot.com/p/upgrade.html"><button id="restbtnt1" >FAQ's</button></a>
+  
+    </div>
+   <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th> you will get these features in the upgraded version.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Change page title</td>
+                    <td> In upgraded version You can change the page title after every 1 second.</td>
+                </tr>
+                <tr>
+                    <td>Change Page location</td>
+                    <td>In upgraded version You can change the Locaton of any country you want.</td>
+                </tr>
+                <tr>
+                    <td>Generate Location Ip adress</td>
+                    <td>In upgraded version You can generate the selected location Ip adress.</td>
+                </tr>
+                <tr>
+                    <td> Fast Speed</td>
+                    <td> In upgraded version the speed of clicking on the link will be 40 times faster then free version.</td>
+                </tr>
+                <tr>
+                    <td> Unlimited clicks.</td>
+                    <td> In upgraded version you can use unlimited clicks on a single time..</td>
+                </tr>
+                <tr>
+                    <td> Advanced Security</td>
+                    <td> In the upgarded version the advanced security will be set on your links.</td>
+                </tr>
+                <tr>
+                    <td> Earning Tips and Tricks</td>
+                    <td> In upgraded version you will see the  unethical earnings tips and tricks by using adsplateforms forms. like adstera,google adsnese></td>
+                </tr>
+                <!-- Add more rows for additional features -->
+            </tbody>
+        </table>
+    </div>
+
+  <p>These are upgraded version view</p>
+<img src="upgradeversionpics (1).jpg">
+<img src="upgradeversionpics (2).jpg">
+  
+  
+<script src="autoclicker.js"></script>
+<script src="homebutton.js"></script>
+
+</body>
+</html>

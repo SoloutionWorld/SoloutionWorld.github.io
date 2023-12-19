@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Soloution World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="HeaderStyle.css">
+    <link rel="stylesheet" href="FooterStyle.css">
+    <link rel="stylesheet" href="CardsStyle.css">
+
+  <link rel="stylesheet" href="WebsiteLogo.css">
+
+
+</head>
+ <link rel="icon" type="image/png" href="SoloutionWorld_Logo.png">
+<style>
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 120px;
+    height: 50px;
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+#WebsiteName {
+    color: #fad373;
+    font-size: 1.5em; /* Adjust font size as needed */
+}
+
+
+</style>
+<body>
+
+
+<header>
+
+            
+       
+
+
+<div class="header-content"> 
+
+           <div class="logo-container">
+            <span class="logo">
+                <img src="SoloutionWorld_Logo.png" alt="Your Logo" id="logoimg">
+            </span>
+            <span id="WebsiteName">SolutionWorld</span>
+
+        </div>
+            <nav>
+             <div id="tags-container">
+
+                <a href="#" class="tag" onclick="filterCards('social')"><i class="fas fa-users"></i> social</a>
+                <a href="#" class="tag" onclick="filterCards('computer')"><i class="fas fa-laptop"></i> computer</a>
+                <a href="#" class="tag" onclick="filterCards('Hacking')"><i class="fas fa-code"></i> Hacking</a>
+                <a href="#" class="tag" onclick="filterCards('Math')"><i class="fas fa-calculator"></i> Math</a>
+                <a href="#" class="tag" onclick="filterCards('Fun')"><i class="fas fa-heart"></i> Fun</a>
+
+    <!-- Add more tags as needed -->
+</div>
+            </nav>
+          </div>
+        
+    </header>
+
+
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="Search..." oninput="searchCards(this.value)">
+   
+</div>
+
+
+<div class="cards-container" id="cards-container">
+
+
+
+
+  <div class="card social Names-Meanings-Translator">
+        <div class="card-header">
+          Names Meanings Translator
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+                Check the meaning of your name within seconds.
+            </div>
+            <div class="buttons-container">
+                <a href="Name meanings .html"> <button class="button button-how-to-use">How to Use</button></a>
+                <a href="Name meanings translator.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    
+</div>
+    <!-- Card 4 -->
+    <div class="card social computer Password-Generator">
+        <div class="card-header">
+        Password Generator
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+                Generate any type of Password with in second.
+            </div>
+            <div class="buttons-container">
+                <a href="Password Generator.html"> <button class="button button-how-to-use">How to Use</button></a>
+                 <a href="Password Generator.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card social computer AllWorldclock">
+        <div class="card-header">
+        World Clock
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+             See the present Time, Date, Day Name of any country. Just type country or select country and see the time. 
+            </div>
+            <div class="buttons-container">
+                <a href="AllWorldclock.html"> <button class="button button-how-to-use">How to Use</button></a>
+                 <a href="AllWorldclock.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card social computer Hacking Automatic-Clicker">
+        <div class="card-header">
+        Automatic Clicker
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+             This tool will click on you link automaticaly after specific Time which you want.
+            </div>
+            <div class="buttons-container">
+                <a href="AutoClicker.html"> <button class="button button-how-to-use">How to Use</button></a>
+                 <a href="AutoClicker.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card social computer  Age-caclulator Math">
+        <div class="card-header">
+        Age Calculator
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+             This tool will click on you link automaticaly after specific Time which you want.
+            </div>
+            <div class="buttons-container">
+                <a href="Age Calculator.html"> <button class="button button-how-to-use">How to Use</button></a>
+                 <a href="Age Calculator.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    </div>
+
+   <div class="card  Hacking  Hacking-file-Generator Fun">
+        <div class="card-header">
+        Hacking file Generator
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+           By using this tool you will be get the data transfering file. and can share it your friend for prank. Do not use this tool for illigical work. 
+            </div>
+            <div class="buttons-container">
+                <a href="Generate the Data Transfering Hack File.html"> <button class="button button-how-to-use">How to Use</button></a>
+                 <a href="Generate the Data Transfering Hack File.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    </div>
+
+
+  <div class="card social  Fun RANDOME-NAME-GENERATOR">
+        <div class="card-header">
+        Random Name Generator
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+          Generate Random Names in one second. Just click on the button it will generate name for you.  
+            </div>
+            <div class="buttons-container">
+                <a href="RANDOME NAME GENERATOR.html"> <button class="button button-how-to-use">How to Use</button></a>
+                 <a href="RANDOME NAME GENERATOR.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    </div>
+
+
+<div class="card social  Fun RANDOME-NAME-GENERATOR">
+        <div class="card-header">
+    Adstera Earning file 
+        </div>
+        <div class="card-content">
+            <div class="left-side-heading">
+          IN This tool just paste your all type of ads links and ads script.and select the page name and send it you will recieve the link of file containg your file and just send this file to one people it automaticlay reach 1000 peoples in one day.   
+            </div>
+            <div class="buttons-container">
+                <a href="Daraz christmas gift earn\Earn christmas gift form Daraz.com.html"> <button class="button button-how-to-use">How to Use</button></a>
+                 <a href="Daraz christmas gift earn\Earn christmas gift form Daraz.com.html"><button class="button button-open"> Open</button></a>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+</div>
+
+
+
+
+
+
+ <footer>
+        <p>&copy; 2023 Soloution World. All Rights Reserved.</p>
+        <p>Designed with ❤️ Jahangir Jaffar.</p>
+        <button class="arrow-up" onclick="scrollToTop()">&#8593;</button>
+    </footer>
+
+<!-- page-wrapper -->
+<script src="FooterScript.js"></script>
+<script src="cardsScript.js"></script>
+<script src="SidebarScript.js"></script>
+
+
+</body>
+
+</html>

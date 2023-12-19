@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock</title>
+<link rel="stylesheet" href="homebutton.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #clock-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            overflow: hidden;
+            /* Hide overflow for smoother transition */
+            transition: height 0.5s ease;
+            /* Added transition for smoother height change */
+        }
+
+        #clock {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        #date-info {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #country-selector,
+        #time-format,
+        #options {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 1em;
+            margin-right: 5px;
+            display: block;
+        }
+
+        /* Updated styles for search input and button */
+        #country-search-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #country-search {
+            flex: 1;
+            margin-right: 5px;
+            padding: 8px;
+            width: 60%;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #search-button {
+            padding: 8px 12px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        #search-button:hover {
+            background-color: #267bb5;
+        }
+
+        #search-message {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+      
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Added styles for mobile responsiveness */
+        @media screen and (max-width: 480px) {
+            #clock-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<button id="top-right-button" onclick="window.location.href = 'index.html'">Go to Home</button>
+    <div id="clock-container">
+        <div id="clock"></div>
+        <div id="date-info"></div>
+
+        <div id="country-selector">
+           
+            <div id="country-search-container">
+                <input type="text" id="country-search" placeholder="Search country">
+                <button id="search-button" onclick="searchCountry()">Search</button>
+            </div>
+            <div id="search-message"></div>
+        </div>
+        <label for="country">Select Your Country
+        <select id="country" onchange="updateTime()">
+               <option value="Asia/Karachi">Pakistan</option>
+    <option value="Africa/Cairo">Egypt</option>
+    <option value="Africa/Johannesburg">South Africa</option>
+    <option value="Europe/Paris">France</option>
+    <option value="Europe/Berlin">Germany</option>
+    <option value="Europe/Rome">Italy</option>
+    <option value="Europe/Amsterdam">Netherlands</option>
+    <option value="Europe/Madrid">Spain</option>
+    <option value="Europe/Stockholm">Sweden</option>
+    <option value="Europe/Athens">Greece</option>
+    <option value="Europe/Istanbul">Turkey</option>
+    <option value="Asia/Baghdad">Iraq</option>
+    <option value="Asia/Beirut">Lebanon</option>
+    <option value="Asia/Damascus">Syria</option>
+    <option value="Asia/Tbilisi">Georgia</option>
+    <option value="Asia/Baku">Azerbaijan</option>
+    <option value="Asia/Yerevan">Armenia</option>
+    <option value="Asia/Colombo">Sri Lanka</option>
+    <option value="Asia/Dushanbe">Tajikistan</option>
+    <option value="Asia/Kolkata">India</option>
+    <option value="Asia/Kathmandu">Nepal</option>
+    <option value="Asia/Almaty">Kazakhstan (Almaty)</option>
+    <option value="Asia/Aqtobe">Kazakhstan (Aqtobe)</option>
+    <option value="Asia/Oral">Kazakhstan (Oral)</option>
+    <option value="Asia/Bishkek">Kyrgyzstan</option>
+    <option value="Asia/Ulaanbaatar">Mongolia</option>
+    <option value="Asia/Pyongyang">North Korea</option>
+    <option value="Asia/Manila">Philippines</option>
+    <option value="Asia/Singapore">Singapore</option>
+    <option value="Asia/Taipei">Taiwan</option>
+    <option value="Asia/Hong_Kong">Hong Kong</option>
+    <option value="Asia/Shanghai">China</option>
+    <option value="Asia/Seoul">South Korea</option>
+    <option value="Asia/Tokyo">Japan</option>
+    <option value="Australia/Sydney">Australia (Sydney)</option>
+    <option value="Australia/Melbourne">Australia (Melbourne)</option>
+    <option value="Australia/Brisbane">Australia (Brisbane)</option>
+    <option value="Australia/Perth">Australia (Perth)</option>
+    <option value="Australia/Adelaide">Australia (Adelaide)</option>
+    <option value="Australia/Hobart">Australia (Hobart)</option>
+    <option value="Australia/Darwin">Australia (Darwin)</option>
+    <option value="Australia/Canberra">Australia (Canberra)</option>
+    <option value="Australia/Broken_Hill">Australia (Broken Hill)</option>
+    <option value="Australia/Lord_Howe">Australia (Lord Howe)</option>
+    <option value="Antarctica/Macquarie">Australia (Macquarie Island)</option>
+    <option value="Australia/Eucla">Australia (Eucla)</option>
+    <option value="Australia/Currie">Australia (Currie)</option>
+    <option value="Australia/Lindeman">Australia (Lindeman)</option>
+    <option value="America/New_York">United States (Eastern Time)</option>
+    <option value="America/Chicago">United States (Central Time)</option>
+    <option value="America/Denver">United States (Mountain Time)</option>
+    <option value="America/Los_Angeles">United States (Pacific Time)</option>
+    <option value="America/Phoenix">United States (Mountain Standard Time)</option>
+    <option value="America/Anchorage">United States (Alaska Time)</option>
+    <option value="America/Honolulu">United States (Hawaii-Aleutian Time)</option>
+    <option value="America/Toronto">Canada (Eastern Time)</option>
+    <option value="America/Montreal">Canada (Eastern Time)</option>
+    <option value="America/Vancouver">Canada (Pacific Time)</option>
+    <option value="America/Mexico_City">Mexico (Central Time)</option>
+    <option value="America/Buenos_Aires">Argentina</option>
+    <option value="America/Sao_Paulo">Brazil (Sao Paulo)</option>
+    <option value="America/Edmonton">Canada (Mountain Time)</option>
+    <option value="America/Atlanta">United States (Eastern Time)</option>
+    <option value="America/Phoenix">United States (Mountain Standard Time)</option>
+    <option value="Africa/Nairobi">Kenya</option>
+    <option value="Asia/Kabul">Afghanistan</option>
+    <option value="Asia/Baghdad">Iraq</option>
+    <option value="Asia/Tehran">Iran</option>
+    <option value="Asia/Dubai">United Arab Emirates</option>
+    <option value="Asia/Muscat">Oman</option>
+    <option value="Asia/Qatar">Qatar</option>
+    <option value="Asia/Riyadh">Saudi Arabia</option>
+    <option value="Asia/Kuwait">Kuwait</option>
+    <option value="Asia/Bahrain">Bahrain</option>
+    <option value="Asia/Beirut">Lebanon</option>
+    <option value="Asia/Amman">Jordan</option>
+    <option value="Asia/Damascus">Syria</option>
+    <option value="Asia/Jerusalem">Israel</option>
+    <option value="Asia/Beirut">Lebanon</option>
+    <option value="Asia/Colombo">Sri Lanka</option>
+    <option value="Asia/Damascus">Syria</option>
+    <option value="Asia/Jerusalem">Israel</option>
+    <option value="Asia/Amman">Jordan</option>
+    <option value="Asia/Bahrain">Bahrain</option>
+    <option value="Asia/Muscat">Oman</option>
+    <option value="Asia/Riyadh">Saudi Arabia</option>
+    <option value="Asia/Qatar">Qatar</option>
+    <option value="Asia/Kuwait">Kuwait</option>
+    <option value="Europe/Paris">France</option>
+    <option value="Europe/Berlin">Germany</option>
+    <option value="Europe/Rome">Italy</option>
+    <option value="Europe/Amsterdam">Netherlands</option>
+    <option value="Europe/Madrid">Spain</option>
+    <option value="Europe/Stockholm">Sweden</option>
+    <option value="Europe/Athens">Greece</option>
+    <option value="Europe/Istanbul">Turkey</option>
+  
+
+  
+            
+            <!-- Add more options as needed -->
+       </label>
+
+        </select>
+    <br>
+    <br>
+    
+        <div id="time-format">
+            <label for="time-format">Select Time Format: 
+            <select id="time-format-select" onchange="updateTime()">
+                <option value="12">12-Hour</option>
+                <option value="24">24-Hour</option>
+              </label>
+            </select>
+        </div>
+
+        <div id="options">
+            <div class="checkbox-container">
+                <input type="checkbox" id="show-day" class="checkbox" onchange="updateTime()" >
+                <label class="checkbox-label" for="show-day">Show Day</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="show-month" class="checkbox" onchange="updateTime()" >
+                <label class="checkbox-label" for="show-month">Show Month</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="show-year" class="checkbox" onchange="updateTime()" >
+                <label class="checkbox-label" for="show-year">Show Year</label>
+            </div>
+        </div>
+
+        <div class="wall-clock"></div>
+    </div>
+
+
+
+<script src="homebutton.js"></script>
+<script src="allworldclock.js"></script>
+</body>
+
+</html>

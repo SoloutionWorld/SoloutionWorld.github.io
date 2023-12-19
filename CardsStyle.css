@@ -1,0 +1,115 @@
+#websitename {
+    font-family: 'Your Desired Font', sans-serif;
+    font-size: 30px;
+    color: yellow;
+    font-weight: bold;
+    /* Add any additional styles here */
+}
+
+
+
+/* Add a hover effect to the links */
+    .tag {
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .tag:hover {
+        color: #4CAF50; /* Change to your desired hover color */
+    }
+    
+    /* Add some space between the icon and the text */
+    .tag i {
+        margin-right: 5px;
+    }
+
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 60%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 300px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.5em;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .left-side-heading {
+            font-size:17px;
+            color: #333;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 15px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-how-to-use {
+            background-color: #27ae60;
+        }
+
+        .button-open {
+            background-color: #e74c3c;
+        }
+
+        .suggestions {
+            position: absolute;
+            width: 60%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+            display: none;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f2f2f2;
+        }

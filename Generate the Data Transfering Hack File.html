@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H4ck3r's Paradise</title>
+<link rel="stylesheet" href="homebutton.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: monospace;
+    }
+
+    a {
+      color: #f00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #000;
+      border: 2px solid #0f0;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+   #top-right-button {
+      background-color:#000;
+      border: 2px solid #0f0;
+      color: #0f0;
+      padding: 3px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .link-container {
+      display: none;
+      padding: 10px;
+      border: 1px solid #0f0;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<button id="top-right-button" onclick="window.location.href = 'index.html'">Go to Home</button><br><br>
+
+  <h1><center>Generate the Data Transfering Hacking File</center></h1>
+<h5><center>This is Just for fun and have only the hacking animation.</center></h5>
+<p> This is the simple Prank File.Do'not worry to this. Click on start button below and the new border will be show . if you want to see the demo of the file that show the transerfs data animation then click on <u> see result </u>button and want to prank with your friend then click on the <U>copy link to clipboard </u>and send this link to your friend.</p>
+<strong>In the see Date of death file.click on the dot Mark(.) which is the <i>.</i>exe click on this dot . when you click on this dot it ask for password. when you enter the password it will stop the data transfering .</strong>
+<ul>
+<li>
+Click on .exe</lia><li>write this password : 1dayUwillBdie </li>
+<li>Press Enter the dat will stop transfering</li>
+</ul>
+  <center>
+    <button id="reveal-link">Let's Start</button>
+  </center>
+  <div id="link-container" class="link-container">
+    <p id="link-text"></p>
+    <button id="copy-link">Copy link to clipboard</button>
+   <button id="open-link"> <a href="SeeYourDateof Death.html"></a>See Result</button>
+  </div>
+
+  <script>
+    const revealButton = document.getElementById('reveal-link');
+    const linkContainer = document.getElementById('link-container');
+    const linkText = document.getElementById('link-text');
+    const copyButton = document.getElementById('copy-link');
+    const openButton = document.getElementById('open-link');
+
+    revealButton.addEventListener('click', () => {
+      linkContainer.style.display = 'block';
+      linkText.textContent = 'SeeYourDateof Death.html';
+    });
+
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(linkText.textContent);
+      alert('L1nk C0pi3d!');
+    });
+
+    openButton.addEventListener('click', () => {
+      window.open(linkText.textContent);
+    });
+  </script>
+<script src="homebutton.js"></script>
+</body>
+</html>
