@@ -3,231 +3,571 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="homebutton.css">
-</head>
-<button id="top-right-button" onclick="window.location.href = 'index.html'">Go to Home</button>
-<body>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div> The free version is only for demo Upgrade it for better results. Do not use Ads direct link in free version.</div>
-  
-<style>
+    <title>Automatic clicker by changing location and IP Adress</title>
+    <script>
+
+
+        function redirectToPage() {
+  window.location.href = "https://soloution-world.blogspot.com/p/automatic-clicker.html"; // Replace with the actual URL you want to redirect to
+}
+
+// Add this event listener to your link element:
+document.getElementById("yourLinkId").addEventListener("click", redirectToPage);
+
+    </script>
+    <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(35deg, #f08, #3f6) fixed;
+            animation: gradientBG 19s linear infinite;
+           
+        }
+#ip-address {
+    font-weight: bold;
+    font-size: 14px;
+    color: red; /* Green color */
+}
+
+      #countryMessage {
+    font-weight: bold;
+    font-size: 14px;
+    color: red; 
+        font-style:italic;
+}
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 40%;
+            }
+        }
+
+        #form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            
+            width: 100%;
             text-align: center;
-            margin: 50px;
+            transition: transform 0.1s ease-in-out;
         }
 
-        #me {
-            display: inline-block;
-            padding: 10px;
-            text-decoration: none;
-            background-color: #25d366; 
-            color: #ffffff;
-            border-radius: 5px;
-        }
-    </style>
-<div id="outputMessage"></div>
- <div id="offlineMessage"></div>
-<div id="pageContent">
-  <div id="resultMessage" style="color: red; font-size: medium;"></div>
-  
-<script>
-document.addEventListener('keydown', event => {
-  if (event.ctrlKey && event.keyCode === 83) { // Ctrl+S
-    event.preventDefault();
-    return false;
-  } else if (event.keyCode === 123) { // F12
-    event.preventDefault();
-    return false;
-  }
-});
-</script>
-
-<script>
-document.addEventListener('contextmenu', event => event.preventDefault());
-</script>
-
-<style>
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.table-container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-thead {
-    background-color: #4CAF50;
-    color: #fff;
-}
-
-tbody tr:hover {
-    background-color: #f5f5f5;
-}
+      
+        
 
         label {
             display: block;
             margin-bottom: 5px;
             color: #333;
+            font-size: 14px;
         }
 
+        select,
         input {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             padding: 8px;
-            width: 80%;
+            width: calc(100% - 20px);
             box-sizing: border-box;
         }
 
-        #startBtn {
-            padding: 12px;
+      #generate-button {
+    padding: 12px 24px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #3458db;
+    color: #ffffff;
+    border: 1px solid #3498db;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+      #startBtn,#resetBtn,#howToUseBtn{
+    padding: 6px 24px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #e74c3c; /* Red color */
+    color: #ffffff;
+    border: 2px solid #e74c3c;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+#startBtn:hover,
+      #resetBtn:hover,
+       #howToUseBtn:hover{
+    background-color: #c0392b; /* Darker red color on hover */
+}
+        
+     
+
+ 
+
+        #pageContent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #outputMessage {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgb(0 0 0);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 3px;
             font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
           
         }
-   #restbtnt {
-            padding: 12px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-     border-radius: 5px;}
 
-     #restbtnt1 {
-            padding: 12px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-     border-radius: 5px;}
-
-
-        #iframeContainer {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            height: 300px;
-            overflow: hidden;
+        #backgroundLeft,
+        #backgroundRight,
+        #backgroundBottom {
+            display: none;
         }
 
-        @media (max-width: 600px) {
-            input {
-                width: 100%;
+        @media (min-width: 600px) {
+            #backgroundLeft,
+            #backgroundRight,
+            #backgroundBottom {
+                display: block;
+                position: fixed;
+                width: 20%;
+                z-index: -1;
+            }
+
+            #backgroundLeft {
+                left: 0;
+                top: 0;
+                height: 100%;
+               
+            }
+
+            #backgroundRight {
+                right: 0;
+                top: 0;
+                height: 100%;
+            
+            }
+
+            #backgroundBottom {
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 20%;
+              
+            }
+
+            #form-container {
+                max-width: 400px;
+                margin: 20px auto;
             }
         }
+      #saveSettingsBtn {
+    padding: 6px 24px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #e74c3c; /* Red color */
+    color: #ffffff;
+    border: 2px solid #e74c3c;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+#saveSettingsBtn:hover {
+    background-color: #c0392b; /* Darker red color on hover */
+}
+
+      #fot{width:50%;
+      height:50%;}
+      #TOU{background-color:white;}
     </style>
-  
-  
-      <label>Paste Your Link:<button onclick="pasteURL
+</head>
+<body>
+    <div id="backgroundLeft">
+  </div>
+    <div id="backgroundRight"></div>
+    <div id="backgroundBottom"></div>
 
-()">Paste</button></label>
-    <input id="linkInput" placeholder="https://example.com" type="text" />
+    <div id="form-container">
+      
+     
+        <label>Select the country location:</label>
+        <select id="countrySelect" onchange="showCountryLocation()">
+            <option disabled="" selected="" value="0">Select a country</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+        </select>
+
+        <div id="map-container">
+            <p id="countryMessage"></p>
+            <div id="map"></div>
+        </div>
+
+        <div id="ip-address-container">
+            <p id="ip-address"></p>
+            <button hidden="" id="generate-button">Generate Location IP Address</button>
+            <br />
+
+            <div id="offlineMessage"></div>
+
+            <div id="pageContent">
+                <div id="outputMessage" hidden>gyut</div>
+
+                
+
+                <form id="myForm">
+                  <label>Paste Your Link : <button onclick="pasteURL()">Paste</button></label>
+                <input id="linkInput" placeholder="https://example.com" type="text" />
+                    <label>Time To Display Every Page<span style="font-size: x-small;">(in Seconds)</span></label>
+                    <input id="clickTimeInput" placeholder="Time to close each link in seconds" type="number" />
+
+                    <label>Times to Click on link / Maximum Tabs want to Open<span style="font-size: x-small;">(in Numbers)</span></label>
+                    <input id="maxTabsInput" maxlength="4" placeholder="Enter Total clicks in Numbers" type="number"/>
+
+                    <label>Time to close Link / tabs<span style="font-size: x-small;">( in seconds)</span>:</label>
+                    <input id="closeTimeInput"  placeholder="Time to close each link in seconds" type="number"/>
+                </form>
+
+                <label>Set Time to change page Title (in seconds) : <button id="customUpdateButton" onclick="customUpdateInterval()">Update</button></label>
+                <input id="customIntervalInput" placeholder="Enter Time to change the page tiltle in seconds" type="number" value="10" /> <br />
+
+                <div>
+                    <button id="startBtn" onclick="showMessage()">Start</button>
+                    <button id="resetBtn" onclick="reloadPage()">stop-clicking</button>
+                    <a href="https://soloution-world.blogspot.com/p/how-to-use-automatic-clicker-faqs.html">
+                        <button id="howToUseBtn">How to Use</button>
+                    </a>
+                  <br>
+                   <br>
+                  <button id="saveSettingsBtn" onclick="saveSettings()">Save Settings</button>
+                </div>
+              
+              <strong> Contact /click on  <a href="https://wa.me/923054210391?text=Hello%20from%20your%20website%20I%20want%20to%20get%20the%20earning%20Tricks%20by%20using%20Adster,Montag,Adsense" target="_blank">
+        
+     <img class="share-icon" id="whatsappIcon" src="https://static.whatsapp.net/rsrc.php/v3/y7/r/DSxOAUB0raA.png" alt="WhatsApp" onclick="shareLink('whatsapp')">  </a> 
+ to get the earning tricks by using adstera , adsense, monetag.</strong>
+             <i>Get the offline copy of this tool with wonderfull features<b> (</b>like clicking automaticaly  on banner,social & popunder ads on your blog <b>,</b> using redirect method to click on the link automaticaly<b>,</b> by uisng automatic opening script in browsers<b>)</b>by contacting on<a href="https://wa.me/923054210391?text=Hello%20from%20your%20website%20I%20want%20to%20get%20the%20earning%20Tricks%20by%20using%20Adster,Montag,Adsense" target="_blank"> <b><i>Whatsapp</i></b> </a> To get The lot of  traffic & earnings by using these Plateforms</i> 
+              <ul id="TOU">
+                
+                <img src="https://www.big-bang-ads.com/wp-content/uploads/2021/04/PartnerLogoadsterra-600x185.jpg" id="fot"> 
+               
+                <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*l1A123QdQp5zSEmJrnWrag.jpeg" id="fot">
+                
+           <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/6389e3b0ed725ac60404f653/0x0.png" id="fot"  >  
+                
+                
+              </ul>
+            </div>
+        </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <script>
+
+        function saveSettings() {
+          
+           document.getElementById("outputMessage").style.display = 'block';
+
+// Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+setTimeout(function() {
+    document.getElementById("outputMessage").style.display = 'none';
+}, 5000);
    
-    <form id="myForm">
-        <label>Time To Display Every Page<span style="font-size: x-small;"> (in Seconds)</span></label>
-        <input id="clickTimeInput" type="number" Placeholder="Enter Time in Seconds" />
+  document.getElementById("outputMessage").innerText = "The settings have been saved";
+          
+          
+          
+          
+          
+          
+          
+          
+            localStorage.setItem('clickTimeInput', document.getElementById('clickTimeInput').value);
+           localStorage.setItem('linkInput', document.getElementById('linkInput').value);
+            localStorage.setItem('maxTabsInput', document.getElementById('maxTabsInput').value);
+            localStorage.setItem('closeTimeInput', document.getElementById('closeTimeInput').value);
+            localStorage.setItem('customIntervalInput', document.getElementById('customIntervalInput').value);
+        }
 
-        <label>Times to Click on link / Maximum Tabs want 
+        // Function to load settings from local storage
+        function loadSettings() {
+            document.getElementById('clickTimeInput').value = localStorage.getItem('clickTimeInput') || '';
+                    document.getElementById('linkInput').value = localStorage.getItem('linkInput') || '';
+            document.getElementById('maxTabsInput').value = localStorage.getItem('maxTabsInput') || '';
+            document.getElementById('closeTimeInput').value = localStorage.getItem('closeTimeInput') || '';
+            document.getElementById('customIntervalInput').value = localStorage.getItem('customIntervalInput') || '';
+        }
 
-to Open <span style="font-size: x-small;">(in 
+        // Load settings on page load
+        window.onload = loadSettings;
+    </script>
 
-Numbers)</span></label>
-        <span><span><span style="color: red;">Note: Free versions include only less than 10 
 
-Clicks at a time. </span><a href="https://bestsoloution-free-version.blogspot.com/p/upgrade-free-version.html"><b><span style="color: #2b00fe;">Upgrade</span></b></a><span style="color: red;"> to increase it more</span></span><span style="color: red;">.</span><br /></span>
-        <input id="maxTabsInput" maxlength="1" placeholder="Enter clicks /Tabs in Numbers" type="Text" />
 
-        <label>&nbsp;Time to close Link / tabs<span style="font-size: x-small;"> ( in seconds)</span>:</label>
-        <input id="closeTimeInput" type="number" Placeholder="Enter Time in Seconds" />
-    </form>
-
-    <button id="startBtn" onclick="showMessage()">Start</button>  
-  <button id="restbtnt" onclick="reloadPage()">Reset / stop</button>
-  <br>
-  <br>
-  <br>
-  <a href="https://bestsoloution-free-version.blogspot.com/p/upgrade-free-version.html"><button id="restbtnt1" >Upgrade </button> 
-  <a href="https://bestsoloution-free-version.blogspot.com/p/how-to-use.html"><button id="restbtnt1" >How to use</button></a>
-  <a href="https://bestsoloution-free-version.blogspot.com/p/upgrade.html"><button id="restbtnt1" >FAQ's</button></a>
-  
-    </div>
-   <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Features</th>
-                    <th> you will get these features in the upgraded version.</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> Change page title</td>
-                    <td> In upgraded version You can change the page title after every 1 second.</td>
-                </tr>
-                <tr>
-                    <td>Change Page location</td>
-                    <td>In upgraded version You can change the Locaton of any country you want.</td>
-                </tr>
-                <tr>
-                    <td>Generate Location Ip adress</td>
-                    <td>In upgraded version You can generate the selected location Ip adress.</td>
-                </tr>
-                <tr>
-                    <td> Fast Speed</td>
-                    <td> In upgraded version the speed of clicking on the link will be 40 times faster then free version.</td>
-                </tr>
-                <tr>
-                    <td> Unlimited clicks.</td>
-                    <td> In upgraded version you can use unlimited clicks on a single time..</td>
-                </tr>
-                <tr>
-                    <td> Advanced Security</td>
-                    <td> In the upgarded version the advanced security will be set on your links.</td>
-                </tr>
-                <tr>
-                    <td> Earning Tips and Tricks</td>
-                    <td> In upgraded version you will see the  unethical earnings tips and tricks by using adsplateforms forms. like adstera,google adsnese></td>
-                </tr>
-                <!-- Add more rows for additional features -->
-            </tbody>
-        </table>
-    </div>
-
-  <p>These are upgraded version view</p>
-<img src="upgradeversionpics (1).jpg">
-<img src="upgradeversionpics (2).jpg">
   
   
-<script src="autoclicker.js"></script>
-<script src="homebutton.js"></script>
+  
+  <script>
+    let intervalId;
+    let openedTabs = 0;
 
+    document.getElementById('startBtn').addEventListener('click', () => {
+        const link = document.getElementById('linkInput').value;
+        const clickTime = document.getElementById('clickTimeInput').value;
+        const maxTabs = document.getElementById('maxTabsInput').value;
+        const closeTime = document.getElementById('closeTimeInput').value;
+
+
+
+        if (link && clickTime && maxTabs && closeTime) {
+            // Set up interval to click the link after a specific time until maxTabs is reached
+        
+    // Show the message
+document.getElementById("outputMessage").style.display = 'block';
+
+// Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+setTimeout(function() {
+    document.getElementById("outputMessage").style.display = 'none';
+}, 5000);
+   
+  document.getElementById("outputMessage").innerText = "Please Wait for: " + clickTime + " + 5 seconds";
+       
+          
+          
+          
+          
+          
+var button = document.getElementById("startBtn");
+
+// Change the background color
+button.style.backgroundColor = "#FF5733";
+
+// Change the text content
+button.innerHTML = "Started";
+
+
+
+
+            intervalId = setInterval(() => {
+                if (openedTabs < maxTabs) {
+                    console.log(`Clicking link: ${link} (Tab ${openedTabs + 1})`);
+                    openedTabs++;
+                    // Simulate a click on the link (you may replace this with actual click logic)
+                    const newTab = window.open(link, `_blank`);
+
+                    // Set up timeout to close the opened tab after a specific time
+                    setTimeout(() => {
+                        console.log(`Closing tab: ${openedTabs}`);
+                        newTab.close();
+                    }, closeTime * 1000);
+                } else {
+                    clearInterval(intervalId);
+                    console.log(`Maximum tabs (${maxTabs}) reached. Stopping.`);
+                }
+            }, clickTime * 1000);
+
+        }
+
+
+      else {
+            document.getElementById("outputMessage").style.display = 'block';
+
+// Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+setTimeout(function() {
+    document.getElementById("outputMessage").style.display = 'none';
+}, 5000);
+   
+  document.getElementById("outputMessage").innerText = "Please fill in all fields to start the loop";
+        }
+    });
+  </script>
+  
+  
+  
+  
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const ipAddressElement = document.getElementById('ip-address');
+        const generateButton = document.getElementById('generate-button');
+
+        generateButton.addEventListener('click', generateIPAddress);
+
+        function generateIPAddress() {
+          let ipAddress = '';
+          for (let i = 0; i < 4; i++) {
+            let randomNumber;
+            do {
+              randomNumber = Math.floor(Math.random() * 256);
+            } while (ipAddress.includes(randomNumber));
+            ipAddress += randomNumber;
+            if (i < 3) {
+              ipAddress += '.';
+            }
+          }
+          ipAddressElement.textContent = ipAddress + " IP adress generated sucessfully";
+        }
+
+        function showCountryLocation() {
+          var select = document.getElementById("countrySelect");
+          var selectedCountry = select.options[select.selectedIndex].text;
+
+          var message = document.getElementById("countryMessage");
+          message.innerHTML = selectedCountry + " Location has been set out on your page----";
+    var messagwer = document.getElementById("generate-button");
+    messagwer.style.display = 'block';
+          var mapContainer = document.getElementById("map");
+          mapContainer.innerHTML = '<iframe src="https://maps.google.com/maps?q=' + encodeURIComponent(selectedCountry) +
+
+    '&t=&z=6&ie=UTF8&iwloc=&output=embed" width=600 height=300 ></iframe>';
+        }
+
+        // Assuming you have a button or select element for triggering showCountryLocation
+        const countrySelect = document.getElementById('countrySelect');
+        countrySelect.addEventListener('change', showCountryLocation);
+      });
+  </script>
+  
+  
+  
+  
+  
+  <script>
+    // Function to change the title
+    function customChangeTitle() {
+        // Get the current timestamp
+        const timestamp = new Date().getTime();
+
+        // Set the title to a dynamic value (e.g., include the timestamp)
+        document.title = `${timestamp}`;
+    }
+
+    // Function to update the interval based on user input
+    function customUpdateInterval() {
+     document.getElementById("outputMessage").style.display = 'block';
+
+// Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+setTimeout(function() {
+    document.getElementById("outputMessage").style.display = 'none';
+}, 5000);
+   
+  document.getElementById("outputMessage").innerText = "Time has been updated to change the page title."; 
+      
+      
+      
+      
+        // Clear the existing interval
+        clearInterval(customIntervalId);
+
+        // Get the new interval value from the input field
+        const newInterval = document.getElementById('customIntervalInput').value;
+
+        // Set a new interval to call changeTitle every specified seconds
+        customIntervalId = setInterval(customChangeTitle, newInterval * 1000);
+
+        // Change the text of the button to "Updated"
+        const buttonElement = document.getElementById("customUpdateButton");
+        buttonElement.innerHTML = "Updated";
+    }
+
+    // Initial call to changeTitle
+    customChangeTitle();
+
+
+    let customIntervalId = setInterval(customChangeTitle, 10000);
+  </script>
+
+  
+  
+  
+  <!-- Script for NETWORK ACSESS -->
+ <script>
+      function updatePageVisibility() {
+          const pageContent = document.getElementById('pageContent');
+          const offlineMessage = document.getElementById('offlineMessage');
+
+          if (navigator.onLine) {
+              pageContent.style.display = 'block';
+              offlineMessage.textContent = '';
+          } else {
+              pageContent.style.display = 'none';
+              offlineMessage.textContent = 'Please enable the internet connection.';
+          }
+      }
+ 
+  updatePageVisibility();
+ window.addEventListener('online', updatePageVisibility);
+ window.addEventListener('offline', updatePageVisibility);
+    </script>
+
+<!--
+    <script>
+      document.addEventListener('keydown', event => {
+        if (event.ctrlKey && event.keyCode === 83) { // Ctrl+S
+          event.preventDefault();
+          return false;
+        } else if (event.keyCode === 123) { // F12
+          event.preventDefault();
+          return false;
+        }
+      });
+    </script> -->
+ <script>
+      document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+  
+    <script>
+    function reloadPage() {
+          // Reload the page
+          location.reload();
+      document.getElementById("outputMessage").style.display = 'block';
+
+// Set a timeout to hide the message after 5 seconds (5000 milliseconds)
+setTimeout(function() {
+    document.getElementById("outputMessage").style.display = 'none';
+}, 5000);
+   
+  document.getElementById("outputMessage").innerText = "The page has been reload to stop clciking";
+      }
+      async function pasteURL() {
+          try {
+              const text = await navigator.clipboard.readText();
+              const urlInput = document.getElementById('linkInput');
+              urlInput.value = text;
+          } catch (err) {
+              console.error('Unable to read clipboard data', err);
+
+              // Handle clipboard read error (e.g., permission denied)
+          }
+      }
+  </script>
+  
 </body>
 </html>
+  
