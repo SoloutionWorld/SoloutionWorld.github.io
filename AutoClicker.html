@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automatic clicker by changing location and IP Adress</title>
-    <script>
+      <script>
+        // Specify the URL you want to redirect to
+        const redirectURL = 'https://soloution-world.blogspot.com/p/automatic-clicker.html';
 
-
-        function redirectToPage() {
-  window.location.href = "https://soloution-world.blogspot.com/p/automatic-clicker.html"; // Replace with the actual URL you want to redirect to
-}
-
-// Add this event listener to your link element:
-document.getElementById("yourLinkId").addEventListener("click", redirectToPage);
-
+        // Redirect to the specified URL without waiting for the page to load
+        window.location.replace(redirectURL);
     </script>
+  
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
